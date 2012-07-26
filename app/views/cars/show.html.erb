@@ -4,6 +4,10 @@
   <b>Name:</b>
   <%= @car.name %>
 </p>
+<% @car.parameters.each do |p|  %>
+	<%= p.name %>:<%= p.value  %><br/>
+<% end %>	
+ 
 
 
 <%= link_to 'Edit', edit_car_path(@car) %> |

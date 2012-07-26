@@ -5,7 +5,7 @@ set :domain,      "test.lehazi.com"
 set :repository,  "git://github.com/sitoto/#{application}.git"
 
 set :use_sudo,    false
-set :deploy_to,   "/data/www/#{application}"
+set :deploy_to,   "/home/ruby/www/#{application}"
 set :scm,         "git"
 
 role :app, domain

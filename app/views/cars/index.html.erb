@@ -1,28 +1,43 @@
-<h1>Listing cars</h1>
+<h1>车型列表</h1>
 
-<table>
+<table class="table table-bordered">
   <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>车型</th>
+    <th>价格(万元)</th>
+    <th>发动机排量</th>
+    <th>生产厂家</th>
+    <th>生产状态</th>
+    <th>show</th>
   </tr>
 
 <% @cars.each do |car| %>
   <tr>
-    <td><%= car.name %></td>
-    <td><%= link_to 'Show', car %></td>
-    <td><%= link_to 'Edit', edit_car_path(car) %></td>
-    <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <tr>
+    <td><%= car.title %></td>
+    <td><%= car.price %></td>
     <td>
-    <%=  car.baseinfo  %>
+    <% car.parameters.each do |p|  %>
+	<%= p.value if !(p.name !~ /发动机排量/) %>
+    <% end %>	
+ 
     </td>
+    <td>
+    <% car.parameters.each do |p|  %>
+	<%= p.value if !(p.name !~ /生产厂家/) %>
+    <% end %>	
+ 
+    </td>
+   <td>
+      <% car.parameters.each do |p|  %>
+	<%= p.value if !(p.name !~ /生产状态/) %>
+    <% end %>	
+     
+    </td>
+
+    <td><%= link_to 'show', car, target: '_blank'  %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Car', new_car_path %>
+<%= paginate @cars %>
