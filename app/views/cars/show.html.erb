@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <b>Name:</b>
-  <%= @car.name %>
+  <b>title:</b>
+  <%= @car.title %>
 </p>
-<% @car.parameters.each do |p|  %>
-	<%= p.name %>:<%= p.value  %><br/>
+<p>
+  <b>price:</b>
+  <%= @car.price %>
+</p>
+<p>
+  <b>url:</b>
+  <%= @car.url %>
+</p>
+
+<table  class="table">
+<% @car.parameters.each_with_index do |p, i|  %>
+<tr><th><%= i %></th><th> <%= p.name %></th><td><%= p.value  %></td></tr>
 <% end %>	
- 
+</table>
 
 
-<%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>
