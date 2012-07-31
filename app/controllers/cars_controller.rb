@@ -21,6 +21,8 @@ class CarsController < ApplicationController
   end
 # Builds an excel report.   
 def report   
+  @cars = Car.all.limit(10)
+
   book  = Spreadsheet::Workbook.new 
 sheet = book.create_worksheet :name => 'Test' 
 merge = Spreadsheet::Format.new :horizontal_align => :merge 
@@ -28,6 +30,9 @@ sheet.row(0).set_format(1, merge)
 sheet.row(0).set_format(2, merge) 
 sheet.row(0).set_format(3, merge) 
 sheet.row(0).set_format(4, merge) 
+  @cars.eachi_with_index do |car, i|
+    sheet.write(i ,1 , car.name)  
+  end
 book.write 'fruits.xls' 
   redirect_to :action => 'download'   
 end  
