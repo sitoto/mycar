@@ -1,7 +1,9 @@
 Mycar::Application.routes.draw do
+  match "cars/download" => "cars#download"
+  match "cars/report" => "cars#report"
+ 
   resources :cars
-
-  authenticated :user do
+ authenticated :user do
     root :to => 'home#index'
   end
   root :to => "home#index"

@@ -11,6 +11,14 @@
   <b>url:</b>
   <%= @car.url %>
 </p>
+<p>
+  <b>created_at:</b>
+  <%= @car.created_at %>
+</p>
+<p>
+  <b>updated_at:</b>
+  <%= @car.updated_at %>
+</p>
 
 <table  class="table">
 <% @car.parameters.each_with_index do |p, i|  %>

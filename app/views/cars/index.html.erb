@@ -2,16 +2,19 @@
 
 <table class="table table-bordered">
   <tr>
+    <th>ID</th>
     <th>车型</th>
     <th>价格(万元)</th>
     <th>发动机排量</th>
     <th>生产厂家</th>
     <th>生产状态</th>
-    <th>show</th>
+    <th>time</th>
+    <th>more</th>
   </tr>
 
 <% @cars.each do |car| %>
   <tr>
+    <td><%= car.name %></td>
     <td><%= car.title %></td>
     <td><%= car.price %></td>
     <td>
@@ -32,8 +35,15 @@
     <% end %>	
      
     </td>
+    <td>
+	<%= car.created_at %><br />
+	<%= car.updated_at %><br />
 
-    <td><%= link_to 'show', car, target: '_blank'  %></td>
+    </td>
+
+    <td>
+	<%= link_to "More", car , target: "_blank", class: "btn btn-info" %>
+    </td>
   </tr>
 <% end %>
 </table>

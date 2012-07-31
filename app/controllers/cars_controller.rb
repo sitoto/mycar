@@ -1,5 +1,8 @@
+require 'spreadsheet'
+#include Spreadsheet
 class CarsController < ApplicationController
-  # GET /cars
+ include Spreadsheet
+ # GET /cars
   # GET /cars.json
   def index
     @cars = Car.page  params[:page]
@@ -9,7 +12,25 @@ class CarsController < ApplicationController
       format.json { render json: @cars }
     end
   end
-
+  def download
+#    @cars = Car.all.limit(300)
+    respond_to do |format|
+      format.html
+#      format.xls {render :xls => "<filename>"}
+    end
+  end
+# Builds an excel report.   
+def report   
+  book  = Spreadsheet::Workbook.new 
+sheet = book.create_worksheet :name => 'Test' 
+merge = Spreadsheet::Format.new :horizontal_align => :merge 
+sheet.row(0).set_format(1, merge) 
+sheet.row(0).set_format(2, merge) 
+sheet.row(0).set_format(3, merge) 
+sheet.row(0).set_format(4, merge) 
+book.write 'fruits.xls' 
+  redirect_to :action => 'download'   
+end  
   # GET /cars/1
   # GET /cars/1.json
   def show

@@ -1,4 +1,7 @@
-source 'https://rubygems.org'
+#source 'http://ruby.taobao.org/'
+source 'http://gems.rubyforge.org/'
+#source 'http://gems.github.org'
+
 gem 'rails', '3.2.6'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,3 +23,4 @@ gem "bootstrap-sass", ">= 2.0.4.0"
 gem "simple_form"
 gem "therubyracer", :group => :assets, :platform => :ruby
 gem 'kaminari'
+gem "spreadsheet"
