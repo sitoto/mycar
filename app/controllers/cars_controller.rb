@@ -30,8 +30,8 @@ sheet.row(0).set_format(1, merge)
 sheet.row(0).set_format(2, merge) 
 sheet.row(0).set_format(3, merge) 
 sheet.row(0).set_format(4, merge) 
-  @cars.eachi_with_index do |car, i|
-    sheet.write(i ,1 , car.name)  
+  @cars.each_with_index do |car, i|
+    sheet[i, 1] =  car.name  
   end
 book.write 'fruits.xls' 
   redirect_to :action => 'download'   
