@@ -1,3 +1,4 @@
+#encoding: UTF-8
 require 'spreadsheet'
 #include Spreadsheet
 class CarsController < ApplicationController
@@ -41,7 +42,7 @@ sheet.row(0).set_format(4, merge)
      
         
   end
-book.write 'test.xls' 
+book.write '/home/ruby/mycar/fruits.xls' 
   redirect_to :action => 'download'   
 end  
   # GET /cars/1
