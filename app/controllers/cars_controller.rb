@@ -31,9 +31,17 @@ sheet.row(0).set_format(2, merge)
 sheet.row(0).set_format(3, merge) 
 sheet.row(0).set_format(4, merge) 
   @cars.each_with_index do |car, i|
-    sheet[i, 1] =  car.name  
+    sheet[i, 1] =  car.title
+    sheet[i, 5] = car.price
+     car.parameters.each do |p| 
+	sheet[i, 2] = p.value if !(p.name !~ /发动机排量/)
+	sheet[i, 3] = p.value if !(p.name !~ /生产厂家/) 
+	sheet[i, 4] = p.value if !(p.name !~ /生产状态/)
+     end
+     
+        
   end
-book.write 'fruits.xls' 
+book.write 'test.xls' 
   redirect_to :action => 'download'   
 end  
   # GET /cars/1
