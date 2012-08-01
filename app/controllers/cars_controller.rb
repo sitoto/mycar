@@ -22,7 +22,7 @@ class CarsController < ApplicationController
   end
 # Builds an excel report.   
 def report   
-  @cars = Car.all.limit(10)
+  @cars = Car.all
 
   book  = Spreadsheet::Workbook.new 
 sheet = book.create_worksheet :name => 'Test' 
