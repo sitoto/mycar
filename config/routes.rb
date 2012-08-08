@@ -1,4 +1,10 @@
 Mycar::Application.routes.draw do
+  resources :pages do
+    collection  do
+      get :sanlv
+    end
+  end 
+
   match "cars/download" => "cars#download"
   match "cars/report" => "cars#report"
  
