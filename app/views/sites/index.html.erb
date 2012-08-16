@@ -1,0 +1,34 @@
+<h1>Listing sites</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Tags</th>
+    <th>Category</th>
+
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sites.each_with_index do |site, i| %>
+  <tr>
+    <td><%= i+1  %></td>
+    <td title="<%= site.note.truncate(100)  %>"><%= site.name %></td>
+    <td><%= link_to  site.url, site.url %></td>
+    <td><%= site.tags %></td>
+    <td><%= site.category %></td>
+    <td><%= site.status %></td>
+    <td><%= link_to 'Show', site %></td>
+    <td><%= link_to 'Edit', edit_site_path(site) %></td>
+    <td><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Site', new_site_path %>

@@ -1,0 +1,37 @@
+<h1>车系（车型）-三滤匹配列表</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>销售排名</th>
+    <th>品牌</th>
+    <th>厂商</th>
+    <th>车系</th>
+    <th>车型列表</th>
+    <th>滤清器</th>
+    <th>规格参数</th>
+  </tr>
+
+<% @cars.each do |car| %>
+  <tr>
+    <td><%= car.sales_count %></td>
+    <td><%= car.brand %></td>
+    <td><%= car.factory %></td>
+    <td><%= car.serial %></td>
+    <td>lists </td>
+    <td>
+      <% car.sanlves.each do |p|  %>
+	<%= p["name"]  %>
+      <% end %>	
+    </td>
+    <td>
+      <% car.sanlves.each do |p|  %>
+	<%= p["value"]  %>
+      <% end %>	
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= paginate @cars %>

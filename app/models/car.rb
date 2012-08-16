@@ -7,6 +7,8 @@ class Car
   field :title, type: String
   field :price, type: String
   field :baseinfo, type: Hash
+
+  scope :sanlves, where(:sanlves.ne => nil).desc(:sales_count)
   
   has_one :cache_html
   embeds_many  :parameters

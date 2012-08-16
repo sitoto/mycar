@@ -1,14 +1,20 @@
 Mycar::Application.routes.draw do
+  resources :sites
+
   resources :pages do
     collection  do
       get :sanlv
     end
   end 
 
-  match "cars/download" => "cars#download"
-  match "cars/report" => "cars#report"
- 
-  resources :cars
+  resources :cars do
+    collection do 
+      get :download
+      get :report
+      get :sanlv
+    end
+  end
+
  authenticated :user do
     root :to => 'home#index'
   end

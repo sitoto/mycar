@@ -13,6 +13,9 @@ class CarsController < ApplicationController
       format.json { render json: @cars }
     end
   end
+  def sanlv
+    @cars = Car.sanlves.page params[:page]
+  end
   def download
 #    @cars = Car.all.limit(300)
     respond_to do |format|
