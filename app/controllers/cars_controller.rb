@@ -2,10 +2,16 @@
 require 'spreadsheet'
 #include Spreadsheet
 class CarsController < ApplicationController
- include Spreadsheet
- # GET /cars
+  include Spreadsheet
+  # GET /cars
   # GET /cars.json
   def index
+  end
+  def qq
+  end
+  def bitauto
+  end
+  def site 
     @cars = Car.desc("created_at").page  params[:page]
 
     respond_to do |format|

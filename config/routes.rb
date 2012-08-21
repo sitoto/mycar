@@ -9,6 +9,10 @@ Mycar::Application.routes.draw do
 
   resources :cars do
     collection do 
+      put :get_qq_list
+      get :site
+      get :qq
+      get :bitauto
       get :download
       get :report
       get :sanlv

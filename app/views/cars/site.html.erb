@@ -1,0 +1,47 @@
+<h1>车型列表</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>ID</th>
+    <th>车型</th>
+    <th>价格(万元)</th>
+    <th>发动机排量</th>
+    <th>生产厂家</th>
+    <th>生产状态</th>
+    <th>more</th>
+  </tr>
+
+<% @cars.each do |car| %>
+  <tr>
+    <td><%= car.name %></td>
+    <td><%= car.title %></td>
+    <td><%= car.price %></td>
+    <td>
+    <% car.parameters.each do |p|  %>
+	<%= p.value if !(p.name !~ /发动机排量/) %>
+    <% end %>	
+ 
+    </td>
+    <td>
+    <% car.parameters.each do |p|  %>
+	<%= p.value if !(p.name !~ /生产厂家/) %>
+    <% end %>	
+ 
+    </td>
+   <td>
+      <% car.parameters.each do |p|  %>
+	<%= p.value if !(p.name !~ /生产状态/) %>
+    <% end %>	
+     
+    </td>
+
+    <td>
+	<%= link_to "More", car , target: "_blank", class: "btn btn-info" %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= paginate @cars %>

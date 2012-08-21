@@ -1,53 +1,42 @@
-<h1>车型列表</h1>
-
-<table class="table table-bordered">
-  <tr>
-    <th>ID</th>
-    <th>车型</th>
-    <th>价格(万元)</th>
-    <th>发动机排量</th>
-    <th>生产厂家</th>
-    <th>生产状态</th>
-    <th>time</th>
-    <th>more</th>
-  </tr>
-
-<% @cars.each do |car| %>
-  <tr>
-    <td><%= car.name %></td>
-    <td><%= car.title %></td>
-    <td><%= car.price %></td>
-    <td>
-    <% car.parameters.each do |p|  %>
-	<%= p.value if !(p.name !~ /发动机排量/) %>
-    <% end %>	
- 
-    </td>
-    <td>
-    <% car.parameters.each do |p|  %>
-	<%= p.value if !(p.name !~ /生产厂家/) %>
-    <% end %>	
- 
-    </td>
-   <td>
-      <% car.parameters.each do |p|  %>
-	<%= p.value if !(p.name !~ /生产状态/) %>
-    <% end %>	
-     
-    </td>
-    <td>
-	<%= car.created_at %><br />
-	<%= car.updated_at %><br />
-
-    </td>
-
-    <td>
-	<%= link_to "More", car , target: "_blank", class: "btn btn-info" %>
-    </td>
-  </tr>
-<% end %>
-</table>
-
+<h1> report </h1>
 <br />
 
-<%= paginate @cars %>
+<div class="row">
+  <div class="span9">
+    <h2>车型数据</h2>
+    <ul>
+      <li><%= link_to "sina", '/cars/site', target: '_blank' %></li>
+      <li><%= link_to "qq", '/cars/qq', target: '_blank' %></li>
+      <li><%= link_to "bitauto", '/cars/bitauto', target: '_blank' %></li>
+    </ul>
+
+  </div>
+  <div class="span3">
+<p>
+    
+</p>
+  </div>
+</div>
+<div class="row show-grid">
+  <div class="span12">
+    <ol>
+      <li><%= link_to "采集列表——存储品牌厂商车型", "/cars/get_qq_list" , method: :put %></li>
+
+    </ol>
+    
+  </div>
+
+</div>
+<div>
+<ol>
+  <li>新建任务</li>
+  <li>配置任务初始工作文件</li>
+  <li>执行任务</li>
+  <li>***重复**</li>
+  <li>生成新任务列表</li>
+  <li>配置新任务工作文件</li>
+  <li>执行新任务</li>
+  <li>**返回**</li>
+</ol>
+
+</div>
