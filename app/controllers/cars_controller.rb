@@ -8,6 +8,7 @@ class CarsController < ApplicationController
   def index
   end
   def qq
+    @brands = Brand.all#includes(:makers)
   end
   def bitauto
   end

@@ -4,7 +4,22 @@
 <div class="row">
   <div class="span9">
     <h2>车型数据</h2>
+    <ul  class="nav nav-pills nav-stacked">
+      <li>共有品牌： <%= @brands.length %></li>
+    <% @brands.each_with_index do |brand, i| %>
+      <li><%= i+1 %>. <%= brand.name %><br />
+	<% if brand.makers  %>
+          <% brand.makers.each do |maker| %>
+            <%= maker.name %> <br />
+            <% maker.serials.each do |s| %>
+		<%= s[:name]%>
+            <% end %>
+          <% end %>
+       <% end %>
 
+      </li>
+    <% end%>
+    </ul>
   </div>
   <div class="span3">
 <p>

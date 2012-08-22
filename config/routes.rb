@@ -1,4 +1,6 @@
 Mycar::Application.routes.draw do
+  resources :brands
+
   resources :sites
 
   resources :pages do
