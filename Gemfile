@@ -1,5 +1,5 @@
-#source 'http://ruby.taobao.org/'
-source 'http://gems.rubyforge.org/'
+source 'http://ruby.taobao.org/'
+#source 'http://gems.rubyforge.org/'
 #source 'http://gems.github.org'
 
 gem 'rails', '3.2.6'
@@ -25,3 +25,4 @@ gem "therubyracer", :group => :assets, :platform => :ruby
 gem 'kaminari'
 gem "spreadsheet"
 gem "chinese_pinyin"
+#gem "csv"

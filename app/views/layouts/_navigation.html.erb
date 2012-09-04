@@ -1,11 +1,20 @@
-<%= link_to "Mycar", root_path, :class => 'brand' %>
+<%= link_to "数据/采集管理", root_path, :class => 'brand' %>
 <ul class="nav">
     <li>
-    <%= link_to 'Cars', cars_path %>
+    <%= link_to '首页', root_path %>
     </li>
     <li>
-    <%= link_to 'Sites', sites_path %>
+    <%= link_to '数据', cars_path %>
     </li>
+    <li>
+    <%= link_to '任务', sites_path %>
+    </li>
+</ul>
+<form action="/search" class="navbar-search pull-left" method="get">
+          <input type="text" name="q" class="search-query span3" value="<%= params[:q] %>" placeholder="搜索" />
+</form>
+
+<ul class="nav pull-right">
   <% if user_signed_in? %>
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        

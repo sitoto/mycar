@@ -1,4 +1,10 @@
 Mycar::Application.routes.draw do
+  resources :qqcars do
+    collection do
+      get :download
+    end
+  end
+
   resources :brands
 
   resources :sites
@@ -13,11 +19,12 @@ Mycar::Application.routes.draw do
     collection do 
       put :get_qq_list
       get :site
-      get :qq
+      get :brand
       get :bitauto
       get :download
       get :report
       get :sanlv
+      get :model
     end
   end
 
