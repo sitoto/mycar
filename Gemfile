@@ -25,4 +25,4 @@ gem "therubyracer", :group => :assets, :platform => :ruby
 gem 'kaminari'
 gem "spreadsheet"
 gem "chinese_pinyin"
-#gem "csv"
+#gem "wice_grid"

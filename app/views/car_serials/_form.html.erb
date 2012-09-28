@@ -1,0 +1,57 @@
+<%= form_for(@car_serial) do |f| %>
+  <% if @car_serial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@car_serial.errors.count, "error") %> prohibited this car_serial from being saved:</h2>
+
+      <ul>
+      <% @car_serial.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :pic %><br />
+    <%= f.text_field :pic %>
+  </div>
+  <div class="field">
+    <%= f.label :firstyear %><br />
+    <%= f.text_field :firstyear %>
+  </div>
+  <div class="field">
+    <%= f.label :lastyear %><br />
+    <%= f.text_field :lastyear %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :baoyangzhouqi %><br />
+    <%= f.text_field :baoyangzhouqi %>
+  </div>
+  <div class="field">
+    <%= f.label :baoyangjiage %><br />
+    <%= f.text_field :baoyangjiage %>
+  </div>
+  <div class="field">
+    <%= f.label :baoyangurl %><br />
+    <%= f.text_field :baoyangurl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

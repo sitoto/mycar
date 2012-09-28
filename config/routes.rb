@@ -1,4 +1,8 @@
 Mycar::Application.routes.draw do
+  resources :car_serials
+
+  get "application/require_admin"
+
   resources :qqcars do
     collection do
       get :download
