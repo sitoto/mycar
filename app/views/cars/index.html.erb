@@ -1,13 +1,11 @@
-<h1> report </h1>
-<br />
-
 <div class="row">
   <div class="span9">
     <h2>车型数据</h2>
     <ul>
-      <li><%= link_to "sina", '/cars/site', target: '_blank' %></li>
-      <li><%= link_to "qq", '/cars/qq', target: '_blank' %></li>
-      <li><%= link_to "bitauto", '/cars/bitauto', target: '_blank' %></li>
+      <li><%= link_to "车型主数据", '/cars/brand', target: '_blank' %></li>
+      <li><%= link_to "车型明细", '/cars/model', target: '_blank' %></li>
+      <li><%= link_to "sina车型数据", '/cars/site', target: '_blank' %></li>
+
     </ul>
 
   </div>
@@ -19,10 +17,6 @@
 </div>
 <div class="row show-grid">
   <div class="span12">
-    <ol>
-      <li><%= link_to "采集列表——存储品牌厂商车型", "/cars/get_qq_list" , method: :put %></li>
-
-    </ol>
     
   </div>
 

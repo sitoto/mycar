@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @qqcar.name %>
+</p>
+
+<p>
+  <b>Name pinyin:</b>
+  <%= @qqcar.name_pinyin %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @qqcar.brand %>
+</p>
+
+<p>
+  <b>Series:</b>
+  <%= @qqcar.series %>
+</p>
+
+<p>
+  <b>Maker:</b>
+  <%= @qqcar.maker %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @qqcar.url %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @qqcar.price %>
+</p>
+
+<p>
+  <b>All price:</b>
+  <%= @qqcar.all_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_qqcar_path(@qqcar) %> |
+<%= link_to 'Back', qqcars_path %>

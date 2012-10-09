@@ -1,0 +1,35 @@
+<h1>Listing qqcars</h1>
+
+<table class="table">
+  <tr>
+   <th>Brand</th>
+    <th>Series</th>
+    <th>Maker</th>
+     <th>Name</th>
+    <th>Url</th>
+    <th>Price</th>
+    <th>All price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @qqcars.each do |qqcar| %>
+  <tr>
+    <td><%= qqcar.brand %></td>
+    <td><%= qqcar.series %></td>
+    <td><%= qqcar.maker %></td>
+    <td><%= qqcar.name %></td>
+    <td><%= qqcar.url %></td>
+    <td><%= qqcar.price %></td>
+    <td><%= qqcar.all_price %></td>
+    <td><%= link_to 'Show', qqcar %></td>
+    <td><%= link_to 'Edit', edit_qqcar_path(qqcar) %></td>
+    <td><%= link_to 'Destroy', qqcar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @qqcars %>
+<br />
+
+<%= link_to 'New Qqcar', new_qqcar_path %>

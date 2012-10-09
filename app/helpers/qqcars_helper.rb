@@ -1,0 +1,2 @@
+module QqcarsHelper
+end

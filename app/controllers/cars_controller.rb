@@ -7,9 +7,15 @@ class CarsController < ApplicationController
   # GET /cars.json
   def index
   end
-  def qq
-    @brands = Brand.all#includes(:makers)
+
+  def brand
+    @brands = Brand.qqcar#includes(:makers)
   end
+
+  def model
+    @models = Qqcar.bitautocar.page params[:page]
+  end
+
   def bitauto
   end
   def site 

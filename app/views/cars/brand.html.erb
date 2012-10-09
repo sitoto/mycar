@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="span9">
+    <h2>车型数据</h2>
+品牌共计：<%= @brands.length %>
+<table class="table">
+<tbody>
+
+    <% @brands.each_with_index do |brand, i| %>
+      <tr>
+        <td><%= image_tag brand.pic_url %><br /> <%= brand.name %></td>
+	<td></td>
+</tr>
+
+	<% if brand.makers  %>
+          <% brand.makers.each do |maker| %>
+    <tr><td></td><td><strong><%= maker.name %></strong></td></tr>
+    <tr><td></td><td> 
+            <% maker.serials.each do |s| %>
+		<%= s["name"] %> 
+            <% end %></td></tr>
+          <% end %>
+       <% end %>
+    <% end%>
+</tbody>
+</table>
+
+  </div>
+  <div class="span3">
+<p>
+car from qq
+    
+</p>
+  </div>
+</div>

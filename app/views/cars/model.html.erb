@@ -1,0 +1,43 @@
+<h1>车型列表</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>序号</th>
+    <th>车型</th>
+    <th>品牌</th>
+    <th>厂家</th>
+    <th>车型系列</th>
+    <th>年款</th>
+    <th>发动机排量</th>
+ </tr>
+
+<% @models.each_with_index do |car, i| %>
+  <tr>
+    <td><span class="badge badge-success"><%= i + 1  %></span></td>
+    <td><%= car.name %></td>
+    <td><%= car.brand %></td>
+    <td><%= car.maker %></td>
+    <td><%= car.series %></td>
+    <td><%= car.year %></td>
+    <td>
+    <% car.parameters.each do |p|  %>
+	<%= p.value if !(p.name !~ /排量/) %>
+    <% end %>	
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="6">
+    <ol>
+      <% car.parameters.each do |p| %>
+        <li><%= p.name + " ： " + p.value  %></li>
+      <% end %>
+    </ol>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= paginate @models %>
